@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <title>4350 Classifieds scraper</title>
+</head>
+
+<body>
+    <div id="tablinks" style=" margin:0 auto;">
+        <button class="tablink" onclick="openPage('Search', this, 'lightgreen')" id="defaultOpen">Crawling</button>
+        <button class="tablink" onclick="openPage('Show-Existing', this, 'lightgreen')">Search DB</button>
+        <button class="tablink" onclick="openPage('info', this, 'lightgreen')">info</button>
+    </div>
+
+    <div id="Search" class="tabcontent" style="width:800px; margin:0 auto;">
+        <input class="searchTerm" type="text" id="searchTerm" placeholder="Search Term" /></br>
+        <select id="site-select">
+            <option value="1">Offerup</option>
+            <option value="2" selected>Craigslist SLC</option>
+            <!-- <option value="3">KSL free items</option> -->
+        </select></br>
+        <button id="start-crawl" class="btn btn-primary">Start Crawler</button></br>
+        <div id="crawlingprogress" class="collapsible"></div>
+        <table class="table" id="crawlTable"></table>
+    </div>
+
+    <div id="Show-Existing" class="tabcontent" style="width:800px; margin:0 auto;">
+        <input class="show-searchTerm" type="text" id="show-searchTerm" placeholder="Search Term" /></br>
+        <button id="show-existing" class="btn btn-primary">Show classifieds in DB</button>
+        <div id="showexistingprogress" class="collapsible"></div>
+        <table class="table" id="existingTable"></table>
+    </div>
+
+    <div id="info" class="tabcontent" style="width:800px; margin:0 auto;">
+        </br>
+        <h3>Crawling</h3>
+        <p>
+            The crawling tab crawls either SLC craigslist or offerUP using the server's location. Pulls as many ads as the search page would pull if you had visited it. Either option can be slow depending on the moment you submit the request, but shouldn't take much
+            more time than 10-15 seconds. generally craigslist has loaded a bit quicker in my testing. It will pull back the Title, description, price, posting time, url to ad. The description is not shown on this page.
+
+        </p>
+        </br>
+        <h3>Search DB</h3>
+        <p>
+            The Search DB tab queries the database for all the records that have the specified search term in the description, not the title. This does not list the description in the table, just the titel, price posting time, url to ad.
+        </p>
+
+    </div>
+
+    <script>
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

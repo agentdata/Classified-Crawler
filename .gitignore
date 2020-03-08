@@ -1,0 +1,45 @@
+.idea/
+/coverage/
+/vendor/*
+/logs/*
+!/logs/README.md
+/.venv3-7
+/.vscode
+scrapy_app/logs
+scrapy_app/dbs
+adcrawler/__pycache__/
+scrapy_app/twistd.pid
+
+
+#root stuff to ignore
+/.venv3-7
+/.vscode
+.editorconfig
+
+#scrapy stuff to ignore
+scrapy_app/logs
+scrapy_app/dbs
+scrapy_app/twistd.pid
+
+#finalproject project stuff to ignore
+finalproject/__pycache__/*
+finalproject/__init__.py
+
+#adcrawler app stuff to ignore
+adcrawler/__pycache__/*
+adcrawler/migrations/*
+db.sqlite3
+
+#other items as i've seen them
+__pycache__/
+*.py[cod]
+scrapy_app/twistd.pid
+scrapy_app/twistd.pid
+finalproject/__pycache__/settings.cpython-37.pyc
+adcrawler/__pycache__/views.cpython-37.pyc
+adcrawler/.my.cnf
+db.sqlite3
+tests/__pycache__/*
+scrapy_app/twistd.pid
+.my.cnf
+sqlite3.db
