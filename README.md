@@ -1,6 +1,6 @@
 ## About
 
-This function of this web app is to crawl classified web pages, at the moment it just crawls craigslist or offerup page with the user's search query and grabs relevant info about the ads on the search page then crawls each of the classified links it get's and parses all the classified info and stores it in the database. There is a second part which allows the user to query the items that have already been crawled and stored in the database.
+The function of this web app is to crawl classified web pages, at the moment it just crawls craigslist or offerup page with the user's search query and grabs relevant info about the ads on the search page then crawls each of the classified links it get's and parses all the classified info and stores it in the database. There is a second part which allows the user to query the items that have already been crawled and stored in the database.
 
 It's a little bit quicker running locally but over the cloud on my mobile phone seems to work pretty decent.
 
